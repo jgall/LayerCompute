@@ -15,7 +15,7 @@ public class ActivationLayer extends Layer {
   }
 
   @Override
-  public double[] backProp(double[] inputs) {
+  protected double[] internalBackProp(double[] inputs) {
     assert (inputs.length == outputSize);
     double[] result = f.derivative(inputs);
     assert (result.length == inputSize);
@@ -23,7 +23,7 @@ public class ActivationLayer extends Layer {
   }
 
   @Override
-  public double[] forwardProp(double[] inputs) {
+  protected double[] internalForwardProp(double[] inputs) {
     assert (inputs.length == inputSize);
     double[] result = f.compute(inputs);
     assert (result.length == outputSize);

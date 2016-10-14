@@ -11,12 +11,12 @@ public class InputLayer extends Layer {
   }
 
   @Override
-  public double[] backProp(double[] inputs) {
+  protected double[] internalBackProp(double[] inputs) {
     return inputs;
   }
 
   @Override
-  public double[] forwardProp(double[] inputs) {
+  protected double[] internalForwardProp(double[] inputs) {
     return inputs;
   }
 }
