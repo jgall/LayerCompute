@@ -69,6 +69,14 @@ public class MatrixMultiplicationTests {
     Assert.assertEquals(twoDArrayToString(new double[][]{{3, 1}, {1, 1}, {1, 0}}), twoDArrayToString(result));
   }
 
+  @Test
+  public void test3x2Times2x3MatrixMul() {
+    double[][] testMatrix1 = new double[][]{{1, 2}, {1, 0}, {0, 1}};
+    double[][] testMatrix2 = new double[][]{{1, 1}, {1, 0}, {0, 0}};
+    double[][] result = MatrixMultiplication.matrixMul(testMatrix1, testMatrix2);
+    Assert.assertEquals(twoDArrayToString(new double[][]{{3, 1, 0}, {1, 1, 0}, {1, 0, 0}}), twoDArrayToString(result));
+  }
+
 
   private String twoDArrayToString(double[][] arr) {
     StringBuilder builder = new StringBuilder();
