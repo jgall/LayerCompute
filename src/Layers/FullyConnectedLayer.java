@@ -21,8 +21,7 @@ public class FullyConnectedLayer extends Layer {
   @Override
   protected double[] internalForwardProp(double[] inputs) {
     double[] withBias = ArrayUtils.appendDouble(inputs, 1);
-    MatrixMultiplication.transform(inputs, weights);
-    return new double[0];
+    return MatrixMultiplication.transform(inputs, weights);
     // TODO : write tests for this function
   }
 
