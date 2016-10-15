@@ -18,17 +18,45 @@ public class MatrixMultiplication {
   /**
    * The matrix multiplication equivalent of matrix1 * transpose(matrix2).
    *
-   * @param matrix1 The left matrix
-   * @param matrix2 The transpose of the right matrix
+   * Motivation behind method : there is no good way to transpose 2d arrays in java, hence this
+   * computes as if the matrix were transposed as not to duplicate memory calls.
+   *
+   * @param a The left matrix
+   * @param b The transpose of the right matrix
    * @return 2d array matrix result of the multiplication
    */
-  public static double[][] matrixMul(double[][] matrix1, double[][] matrix2) {
-    assert (matrix1[0].length == matrix2[0].length);
+  public static double[][] matMulTranspose(double[][] a, double[][] b) {
+    assert (a[0].length == b[0].length);
+    double[][] result = new double[a.length][b.length];
 
-    double[][] result = new double[matrix1.length][matrix2.length];
+    for (int i = 0; i < a.length; i++) {
+      for (int j = 0; j < b.length; j++) {
+        for (int k = 0; k < b[0].length; k++) {
+          result[i][j] += a[i][k] * b[j][k];
+        }
+      }
+    }
 
-    for (int i = 0; i < matrix1.length; i++) {
-      result[i] = transform(matrix1[i], matrix2);
+    return result;
+  }
+
+  /**
+   * Matrix multiplication of a * b.
+   *
+   * @param a The left matrix
+   * @param b The right matrix
+   * @return 2d array of doubles that is the result of a * b
+   */
+  public static double[][] matMulRegular(double[][] a, double[][] b) {
+    assert (a[0].length == b.length);
+
+    double[][] result = new double[a.length][b[0].length];
+    for (int i = 0; i < a.length; i++) {
+      for (int j = 0; j < b[0].length; j++) {
+        for (int k = 0; k < b.length; k++) {
+          result[i][k] += a[i][k] * b[k][j];
+        }
+      }
     }
 
     return result;

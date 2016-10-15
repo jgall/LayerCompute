@@ -23,5 +23,11 @@ public class ArrayUtils {
     return result;
   }
 
+  public static double[] removeFirst(double[] array) {
+    double[] result = new double[array.length - 1];
+    System.arraycopy(array, 1, result, 0, array.length);
+    return result;
+  }
+
 
 }
