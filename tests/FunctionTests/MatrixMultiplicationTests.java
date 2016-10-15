@@ -30,7 +30,7 @@ public class MatrixMultiplicationTests {
   }
 
   @Test
-  public void test1x2Times2x2MatrixMul() {
+  public void test1x2Times2x2MatrixMulTranspose() {
     double[][] testMatrix1 = new double[][]{{1, 2}};
     double[][] testMatrix2 = new double[][]{{1, 0}, {0, 1}};
     double[][] result = MatrixMultiplication.matMulTranspose(testMatrix1, testMatrix2);
@@ -38,7 +38,7 @@ public class MatrixMultiplicationTests {
   }
 
   @Test
-  public void test1x2Times2x1MatrixMul() {
+  public void test1x2Times2x1MatrixMulTranspose() {
     double[][] testMatrix1 = new double[][]{{1, 2}};
     double[][] testMatrix2 = new double[][]{{1, 1}};
     double[][] result = MatrixMultiplication.matMulTranspose(testMatrix1, testMatrix2);
@@ -46,7 +46,7 @@ public class MatrixMultiplicationTests {
   }
 
   @Test
-  public void test2x2Times2x1MatrixMul() {
+  public void test2x2Times2x1MatrixMulTranspose() {
     double[][] testMatrix1 = new double[][]{{1, 2}, {1, 0}};
     double[][] testMatrix2 = new double[][]{{1, 1}};
     double[][] result = MatrixMultiplication.matMulTranspose(testMatrix1, testMatrix2);
@@ -54,7 +54,7 @@ public class MatrixMultiplicationTests {
   }
 
   @Test
-  public void test2x2Times2x2MatrixMul() {
+  public void test2x2Times2x2MatrixMulTranspose() {
     double[][] testMatrix1 = new double[][]{{1, 2}, {1, 0}};
     double[][] testMatrix2 = new double[][]{{1, 1}, {1, 1}};
     double[][] result = MatrixMultiplication.matMulTranspose(testMatrix1, testMatrix2);
@@ -62,7 +62,7 @@ public class MatrixMultiplicationTests {
   }
 
   @Test
-  public void test3x2Times2x2MatrixMul() {
+  public void test3x2Times2x2MatrixMulTranspose() {
     double[][] testMatrix1 = new double[][]{{1, 2}, {1, 0}, {0, 1}};
     double[][] testMatrix2 = new double[][]{{1, 1}, {1, 0}};
     double[][] result = MatrixMultiplication.matMulTranspose(testMatrix1, testMatrix2);
@@ -70,7 +70,7 @@ public class MatrixMultiplicationTests {
   }
 
   @Test
-  public void test3x2Times2x3MatrixMul() {
+  public void test3x2Times2x3MatrixMulTranspose() {
     double[][] testMatrix1 = new double[][]{{1, 2}, {1, 0}, {0, 1}};
     double[][] testMatrix2 = new double[][]{{1, 1}, {1, 0}, {0, 0}};
     double[][] result = MatrixMultiplication.matMulTranspose(testMatrix1, testMatrix2);
