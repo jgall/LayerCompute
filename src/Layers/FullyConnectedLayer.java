@@ -27,7 +27,7 @@ public class FullyConnectedLayer extends Layer {
 
   @Override
   protected double[] internalBackProp(double[] inputs) {
-    double[] withBias = MatrixMultiplication.matMulTranspose(weights, new double[][]{inputs})[0];
+    double[] withBias = MatrixMultiplication.matMulRegular(new double[][]{inputs}, weights)[0];
     return ArrayUtils.removeFirst(withBias);
     // TODO : write tests for this function
   }

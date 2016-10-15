@@ -77,11 +77,35 @@ public class MatrixMultiplicationTests {
     Assert.assertEquals(twoDArrayToString(new double[][]{{3, 1, 0}, {1, 1, 0}, {1, 0, 0}}), twoDArrayToString(result));
   }
 
+  @Test
+  public void test3x2Times2x3MatrixMulRegular() {
+    double[][] testMatrix1 = new double[][]{{1, 2}, {1, 0}, {0, 1}};
+    double[][] testMatrix2 = new double[][]{{1, 1, 0}, {1, 0, 0}};
+    double[][] result = MatrixMultiplication.matMulRegular(testMatrix1, testMatrix2);
+    Assert.assertEquals(twoDArrayToString(new double[][]{{3, 1, 0}, {1, 1, 0}, {1, 0, 0}}), twoDArrayToString(result));
+  }
+
+  @Test
+  public void test1x3Times3x1MatrixMulRegular() {
+    double[][] testMatrix1 = new double[][]{{1, 2, 3}};
+    double[][] testMatrix2 = new double[][]{{1, 0, 0}, {0, 1, 0}, {0, 0, 1}};
+    double[][] result = MatrixMultiplication.matMulRegular(testMatrix1, testMatrix2);
+    Assert.assertEquals(twoDArrayToString(testMatrix1), twoDArrayToString(result));
+  }
+
+  @Test
+  public void test1x2Times2x2MatrixMulRegular() {
+    double[][] testMatrix1 = new double[][]{{1, 2}};
+    double[][] testMatrix2 = new double[][]{{1, 0}, {0, 1}};
+    double[][] result = MatrixMultiplication.matMulRegular(testMatrix1, testMatrix2);
+    Assert.assertEquals(twoDArrayToString(testMatrix1), twoDArrayToString(result));
+  }
+
 
   private String twoDArrayToString(double[][] arr) {
     StringBuilder builder = new StringBuilder();
     for (int i = 0; i < arr.length; i++) {
-      builder.append(" ").append(Arrays.toString(arr[i]));
+      builder.append(" {").append(Arrays.toString(arr[i])).append("} ");
     }
 
     return builder.toString();
