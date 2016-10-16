@@ -25,6 +25,12 @@ public class FullyConnectedLayer extends Layer {
     // TODO : write tests for this function
   }
 
+  /**
+   * deltaThis = deltaNext*this.weights .* next.derivative
+   * gradThis = deltaThis
+   *
+   * @param inputs Inputs to be used for computation
+   */
   @Override
   protected double[] internalBackProp(double[] inputs) {
     double[] withBias = MatrixMultiplication.matMulRegular(new double[][]{inputs}, weights)[0];
