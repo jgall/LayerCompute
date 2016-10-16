@@ -29,5 +29,13 @@ public class ArrayUtils {
     return result;
   }
 
+  public static double[] multiplyEach(double[] a, double[] b) {
+    double[] result = new double[a.length];
+    for (int i = 0; i < a.length; i++) {
+      result[i] = a[i] * b[i];
+    }
+    return result;
+  }
+
 
 }
