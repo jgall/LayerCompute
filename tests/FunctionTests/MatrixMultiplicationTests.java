@@ -86,7 +86,7 @@ public class MatrixMultiplicationTests {
   }
 
   @Test
-  public void test1x3Times3x1MatrixMulRegular() {
+  public void test1x3Times3x3MatrixMulRegular() {
     double[][] testMatrix1 = new double[][]{{1, 2, 3}};
     double[][] testMatrix2 = new double[][]{{1, 0, 0}, {0, 1, 0}, {0, 0, 1}};
     double[][] result = MatrixMultiplication.matMulRegular(testMatrix1, testMatrix2);
@@ -109,5 +109,13 @@ public class MatrixMultiplicationTests {
     }
 
     return builder.toString();
+  }
+
+  @Test
+  public void test1x3Times3x1MatrixMulRegular() {
+    double[][] testMatrix1 = new double[][]{{1, 2, 3}};
+    double[][] testMatrix2 = new double[][]{{1}, {0}, {1}};
+    double[][] result = MatrixMultiplication.matMulRegular(testMatrix1, testMatrix2);
+    Assert.assertEquals(twoDArrayToString(new double[][]{{4.0}}), twoDArrayToString(result));
   }
 }
